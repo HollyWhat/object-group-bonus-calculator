@@ -55,10 +55,26 @@ for(let i=0; i<employees.length; i += 1){
  * @return new object with bonus and compenstation properties
  */
 
+
+
 function bonusCalculator(employeeInput){
   console.log('in bonusCalculator:', employeeInput);
   let bonusPercentage = 0;
-  // make totalCompensation another function that we call here
+  // begin if statements for cal
+
+if( employeeInput.reviewRating <= 2){
+  console.log("no bonus");
+}else if (employeeInput.reviewRating === 3) {
+  console.log("your bonus is 4%" );
+  bonusPercentage += 1.04;
+} else  if ( employeeInput.reviewRating === 4){
+  console.log("your bonus is 6%");
+  bonusPercentage += 1.06;
+} else if(employeeInput.reviewRating === 5){
+  console.log("your bonus is 10%");
+  bonusPercentage += 1.10;
+}
+// make totalCompensation another function that we call here
   const newObject = {
     name: employeeInput.name,
     bonusPercentage: bonusPercentage,
@@ -67,4 +83,6 @@ function bonusCalculator(employeeInput){
   };
   return newObject;
   }
+
+
 
